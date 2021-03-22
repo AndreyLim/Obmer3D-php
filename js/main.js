@@ -1,36 +1,65 @@
 var swiper = new Swiper('.swiper-container', {
-slidesPerView: 3,
-spaceBetween: 30,
-autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
+  slidesPerView: 3,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.third-block__input--phone').mask('+7 (999) 999-99-99');
 });
 
 
 //кнопка вызова формы
-var b = document.getElementById('overlay');
-function swa(){
-	b.style.visibility = 'visible';
-	b.style.opacity = '1';
-	b.style.transition = 'all 0.7s ease-out 0s';
+let b = document.getElementById('overlay');
+function swa() {
+  b.style.visibility = 'visible';
+  b.style.opacity = '1';
+  b.style.transition = 'all 0.7s ease-out 0s';
 }
-function swa2(){
-	b.style.visibility = 'hidden';
-	b.style.opacity = '0';
+function swa2() {
+  b.style.visibility = 'hidden';
+  b.style.opacity = '0';
 }
 
+const postData = body => fetch('./send.php', {
+  method: 'POST',
+  headerd: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(body)
+});
 
-let sendForm = document.querySelector('#openmod');
-sendForm.addEventListener('click', openModal);
-$('#form').trigger('reset');
-sendForm.onclick = function (evt) {
-  evt.preventDefault();
-};
+const forms = document.querySelectorAll('form');
+const modalText = document.querySelector('.modal__text');
+
+forms.forEach(x => x.addEventListener('submit', e => {
+  swa2();
+  e.preventDefault();
+
+  const formData = new FormData(x),
+    body = {};
+  formData.forEach((v, k) => body[k] = v);
+  postData(body)
+    .then(response => {
+      if (response.status > 400) {
+        throw new Error('Status network is not 200');
+      }
+      modalText.textContent = 'Ваша заявка принята. В ближайшее время с Вами свяжется наш специалист.';
+      x.reset();
+    })
+    .catch(error => {
+      modalText.textContent = 'Что-то пошло не так... Попробуйте еще раз!';
+      console.error(error);
+    }).finally(() => {
+      openModal();
+      setTimeout(() => {
+        closeModal();
+      }, 2000);
+    })
+}));
 
 function openModal() {
   var modalOverlay = $(".modal__overlay");
@@ -43,7 +72,7 @@ let closeButton = document.querySelector('.modal__button');
 closeButton.addEventListener('click', closeModal);
 
 
-  function closeModal() {
+function closeModal() {
   var modalOverlay = $(".modal__overlay");
   var modalDialog = $(".modal__dialog");
   modalOverlay.removeClass("modal__overlay--visible");

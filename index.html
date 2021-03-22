@@ -104,10 +104,10 @@
               </ul>
             </div>
             <!-- /.third-block__text -->
-            <form class="form third-block__form--mobile--hidden" action="send.php" method="POST">
-              <input type="text" class="input third-block__input" placeholder="Ваше имя" name="name" required>
-              <input type="text" class="input third-block__input--phone" placeholder="Ваш телефон" name="phone" required minlength="18">
-              <button id="openmod" type="submit" class="button third-block__button">Отправить заявку</button>
+            <form class="form third-block__form--mobile--hidden" action="send.php" method="POST" id="top__form">
+              <input type="text" class="input third-block__input input__name" placeholder="Ваше имя" name="name" required>
+              <input type="text" class="input third-block__input--phone input__phone" placeholder="Ваш телефон" name="phone" required minlength="18">
+              <button id="openmod" type="submit" class="button third-block__button form__button">Отправить заявку</button>
             </form>
           </div>
           <!-- /.third-block -->
@@ -205,13 +205,13 @@
                 <div class="img-circleblock" style="transform-origin: center;"></div>
               </div>
             </a>
-            <form class="form" id="overlay" action="send.php" method="POST">
+            <form class="form form__popup" id="overlay" action="send.php" method="POST">
               <div class="popup">
-                <button class="close" title="Закрыть окно" onclick="swa2()"></button>
-                <input type="text" class="modalinput input third-block__input" placeholder="Ваше имя" name="name" required>
-                <input type="text" class="modalinput input third-block__input--phone" placeholder="Ваш телефон" name="phone" required
+                <button type="button" class="close" title="Закрыть окно" onclick="swa2()"></button>
+                <input type="text" class="modalinput input third-block__input input__name" placeholder="Ваше имя" name="name" required>
+                <input type="text" class="modalinput input third-block__input--phone input__phone" placeholder="Ваш телефон" name="phone" required
                   minlength="18">
-                <button id="openmod" type="submit" class="button third-block__button">Отправить заявку</button>
+                <button id="openmod" type="submit" class="button third-block__button popup__button">Отправить заявку</button>
               </div>
             </form>
           </div>

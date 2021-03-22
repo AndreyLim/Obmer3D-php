@@ -24,7 +24,7 @@ function swa2() {
   b.style.opacity = '0';
 }
 
-const postData = body => fetch('./send.php', {
+const postData = body => fetch('https://andreylimin.ru/send.php', {
   method: 'POST',
   headerd: {
     'Content-Type': 'application/json'

@@ -15,6 +15,6 @@ $body = "
 Имя: $name
 Телефон: $phone
 ";
-mail('andreylimin@mail.ru', "Новая заявка на сканирование.", $body);
+mail('3349049@gmail.com', "Новая заявка на сканирование.", $body);
 
 

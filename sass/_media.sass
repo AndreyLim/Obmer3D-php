@@ -187,6 +187,7 @@
       font-size: 12px
       line-height: 13px
     &__title2
+      margin-top: 5px
       font-size: 12px
       line-height: 13px
   .third-block
@@ -299,10 +300,13 @@
       font-size: 12px
       line-height: 13px
       margin-bottom: 5px
+      display: none
     &__video
       margin-left: 20px
       width: 200px
       height: 150px
+      margin-top: 70px
+
   .second-block
     margin-bottom: 5px
     &__title
@@ -395,7 +399,7 @@
       width: 33%
       font-size: 9px
 
-@media ( max-width: 500px )
+@media ( max-width: 480px )
   .container
     max-width: 340px
 
@@ -412,7 +416,7 @@
       &__top
         display: flex
         flex-direction: row
-        height: 60px
+        height: 30px
         justify-content: space-between
         align-items: center
       &__bottom
@@ -428,12 +432,15 @@
       height: 25px
     &-contacts
       height: 30px
+      margin-top: 13px
   .top
     &__logo
       max-width: 60px
+      margin-top: 8px
     &__site
-      font-size: 12px
+      display: none
   .contacts
+    flex-direction: row
     &__tel
       font-size: 10px
     &__mail
@@ -444,15 +451,68 @@
       height: 13px
       margin-left: 7px
 
+  .first-block
+    display: block
+    &__video
+      margin-left: 0px
+      width: 290px
+      height: 180px
+      margin-top: 10px
+
+  .accordian
+    width: 280px
+    height: 125px
+    margin-top: 10px
+    margin-bottom: 15px
+    margin-right: 0
+    margin-left: 0
+
+  .slider-work
+    &__item
+      width: 23px
+  .image
+    &__foto
+      height: 125px
+      max-width: 150px
+    &_title
+      width: 150px
+
+  .swiper-slide
+    &__image
+      height: 50px
+
   .footer
+    &-wrapper
+      height: 50px
     &__address
       width: 33%
-      font-size: 10px
+      font-size: 7px
+      line-height: 10px
     &__logo
-      width: 90px
+      width: 80px
     &__contacts
       width: 33%
+      font-size: 7px
+      line-height: 10px
 
-@media ( max-width: 360px )
+@media ( max-width: 400px )
   .container
     max-width: 280px
+
+  .first-block
+    &__video
+      width: 230px
+
+  .second-block
+    margin-top: 10px
+
+@media ( max-width: 320px )
+  .container
+    max-width: 280px
+
+  .accordian
+    width: 230px
+
+  .slider-work
+    &__item
+      width: 13px

@@ -32,3 +32,26 @@
     font-size: 9px;
   }
 }
+
+@media (max-width: 480px) {
+  .image_title a {
+    padding: 2px;
+    font-size: 10px;
+  }
+  .accordian ul:hover li {
+    width: 20px;
+  }
+  .accordian ul li:hover {
+    width: 150px;
+  }
+}
+
+@media (max-width: 320px) {
+  .accordian ul:hover li {
+    width: 13px;
+  }
+
+  .accordian ul li:hover {
+    width: 150px;
+  }
+}

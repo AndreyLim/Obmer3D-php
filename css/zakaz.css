@@ -281,7 +281,7 @@
   flex-direction: column;
   margin: auto;
   width: 80%;
-  max-width: min-content;
+  max-width: 210px;
   position: fixed;
   padding: 15px 20px;
   padding-right: 34px;

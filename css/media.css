@@ -44,6 +44,23 @@
   .accordian ul li:hover {
     width: 150px;
   }
+  .circlephone {
+    width: 120px;
+    height: 120px;
+  }
+  .circle-fill {
+    width: 70px;
+    height: 70px;
+  }
+  .img-circle {
+    width: 42px;
+    height: 42px;
+  }
+  .img-circleblock {
+    width: 42px;
+    height: 42px;
+    background-image: url(../image/phone2.png);
+  }
 }
 
 @media (max-width: 320px) {
